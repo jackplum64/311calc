@@ -15,6 +15,12 @@ def atm2pa(pres_atm: float) -> float:
 def pa2atm(pres_pa: float) -> float:
     return pres_pa / 101325
 
+def k2r(temp_K: float) -> float:
+    return temp_K * 1.8
+
+def r2k(temp_R: float) -> float:
+    return temp_R / 1.8
+
 
 def main():
     print('utils.py was run but there is no code in main()')

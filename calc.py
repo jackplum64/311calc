@@ -7,7 +7,7 @@ from isentropic import (isentropic_T_T0, isentropic_mach_T_T0,
 from shock import (mach_angle, mach1_mach2, normal_shock_P,
                    normal_shock_P0, normal_shock_T, normal_shock_rho, pitot_tube)
 
-from utils import pa2atm, atm2pa, rad2deg, deg2rad
+from utils import pa2atm, atm2pa, rad2deg, deg2rad, r2k, k2r
 
 
 def bernoulli_eqn(P=None, P0=None, rho=None, U=None):
