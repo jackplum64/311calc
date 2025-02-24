@@ -377,6 +377,13 @@ def main():
     #normal_shock_T(M1=None, T1=None, T2=None)
     #normal_shock_P0(P1=None, P2=None, T1=None, T2=None, P01=None, P02=None)
     #pitot_tube(M=None, P1=None, P02=None)
+
+    #deg2rad(angle)
+    #rad2deg(angle)
+    #pa2atm(pressure)
+    #atm2pa(pressure)
+    #r2k(temperature)
+    #k2r(temperature)
     
 
 
