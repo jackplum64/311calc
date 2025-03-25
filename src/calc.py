@@ -45,7 +45,7 @@ def main():
     P02_P01_ratio = normal_shock_P0(P1=None, P2=None, T1=None, T2=None, P01=None, P02=None, P2_P1_ratio=P2_P1_ratio, T1_T2_ratio=T1_T2_ratio, P02_P01_ratio=None)
     print(f'P02/P01 = {P02_P01_ratio}')
 
-
+    ### || ISENTROPIC RELATIONS || ###
     #isentropic_T_T0(T0=None, T=None, gamma=None, M=None)
     #isentropic_P_P0(P0=None, P=None, T0=None, T=None, Cp=None, R=None)
     #isentropic_rho_rho0(rho0=None, rho=None, T0=None, T=None, Cv=None, R=None)
@@ -53,6 +53,7 @@ def main():
     #isentropic_mach_P_P0(M=None, P0=None, P=None)
     #isentropic_mach_rho_rho0(M=None, rho0=None, rho=None)
 
+    ### || MISC || ###
     #bernoulli_eqn(P=None, P0=None, rho=None, U=None)
     #mach_eqn(M=None, U=None, gamma=None, R=None, T=None)
     #velocity_T0_T(U=None, Cp=None, T0=None, T=None)
@@ -60,6 +61,7 @@ def main():
     #compute_entropies(Cp_metric, R_metric, T1, T2, P1, P2, s1_initial=0.0)
     #Cp_P_T(P0=None, P=None, T0=None, T=None, Cp=None, R=None)
 
+    ### || NORMAL SHOCKS || ###
     #mach1_mach2(M1=None, M2=None)
     #normal_shock_rho(M1=None, rho1=None, rho2=None, rho2_rho1_ratio=None)
     #normal_shock_P(M1=None, P1=None, P2=None, P2_P1_ratio=None)
@@ -71,6 +73,8 @@ def main():
     #theta_beta_mach(theta=None, beta=None, M1=None, gamma=None)
     #solve_beta(theta: float, M1: float, gamma: float, branch: str = 'weak') -> float
 
+
+    ### || OBLIQUE RELATIONS || ###
     #mach_angle(angle=None, mach=None)
     #mach_beta_relation(Mn1=None, M1=None, beta=None)
     #machn1_machn2_relation(Mn1=None, Mn2=None, gamma=None)
@@ -80,9 +84,11 @@ def main():
     #phi_beta_theta(phi=None, beta=None, theta=None)
     #M2_Mn2_relation(M2=None, Mn2=None, beta=None, theta=None)
 
+    ### || PRANDTL-MEYER || ###
     #prandtl_meyer(gamma=None, mach=None)
     #prandtl_meyer_difference(M1=None, M2=None, gamma=None)
 
+    ### || UTILITY FUNCTIONS|| ###
     #deg2rad(angle)
     #rad2deg(angle)
     #pa2atm(pressure)
