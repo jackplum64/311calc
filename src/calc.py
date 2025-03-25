@@ -10,6 +10,7 @@ from oblique_shock import (mach_angle, mach_beta_relation, theta_beta_mach,
 from utils import (pa2atm, atm2pa, rad2deg, deg2rad, r2k, k2r)
 from general import (bernoulli_eqn, mach_eqn, velocity_T0_T,
                      Cv_rho_T, compute_entropies, Cp_P_T)
+from prandtl_meyer import (prandtl_meyer, prandtl_meyer_difference)
 
 
 def main():
@@ -78,6 +79,9 @@ def main():
     #temperature_ratio(T1=None, T2=None, P1=None, P2=None, rho1=None, rho2=None, T_ratio=None, P_ratio=None, rho_ratio=None)
     #phi_beta_theta(phi=None, beta=None, theta=None)
     #M2_Mn2_relation(M2=None, Mn2=None, beta=None, theta=None)
+
+    #prandtl_meyer(gamma=None, mach=None)
+    #prandtl_meyer_difference(M1=None, M2=None, gamma=None)
 
     #deg2rad(angle)
     #rad2deg(angle)
