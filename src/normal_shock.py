@@ -1,33 +1,5 @@
 import math
 
-
-def mach_angle(angle=None, mach=None):
-    """ 
-    Solve for the missing variable in the relation
-
-        mu = asin(1 / M)
-
-    Exactly one of angle or mach must be None.
-
-    Parameters:
-      angle (float): Mach angle in degrees (None if unknown)
-      mach (float): Mach number (None if unknown)
-
-    Returns:
-      float: The computed mach angle (in degrees) or mach number.
-
-    Raises:
-      ValueError: if not exactly one variable is None or if a math error occurs.
-    """
-    if angle is None:
-        if mach is None:
-            raise ValueError("Insufficient variables to solve for angle.")
-        return math.degrees(math.asin(1 / mach))
-    elif mach is None:
-        if angle is None:
-            raise ValueError("Insufficient variables to solve for mach.")
-        # math.sin expects angle in radians.
-        return 1 / math.sin(math.radians(angle))
     
 
 def mach1_mach2(M1=None, M2=None):
@@ -385,7 +357,7 @@ def pitot_tube(M=None, P1=None, P02=None):
 
 
 def main():
-    print('shock.py was run but there is no code in main()')
+    print('normal_shock.py was run but there is no code in main()')
 
 
 
