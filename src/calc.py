@@ -10,7 +10,8 @@ from oblique_shock import (mach_angle, mach_beta_relation, theta_beta_mach,
 from utils import (pa2atm, atm2pa, rad2deg, deg2rad, r2k, k2r)
 from general import (bernoulli_eqn, mach_eqn, velocity_T0_T,
                      Cv_rho_T, compute_entropies, Cp_P_T)
-from prandtl_meyer import (prandtl_meyer, prandtl_meyer_difference)
+from prandtl_meyer import (prandtl_meyer, prandtl_meyer_difference, expansion_T2_T1,
+                            expansion_P2_P1)
 
 
 def main():
@@ -87,6 +88,8 @@ def main():
     ### || PRANDTL-MEYER || ###
     #prandtl_meyer(gamma=None, mach=None)
     #prandtl_meyer_difference(M1=None, M2=None, gamma=None)
+    #expansion_T2_T1(gamma=None, M1=None, M2=None, T1=None, T2=None, T2_T1_ratio=None)
+    #expansion_P2_P1(gamma=None, M1=None, M2=None, P1=None, P2=None, P2_P1_ratio=None)
 
     ### || UTILITY FUNCTIONS|| ###
     #deg2rad(angle)
