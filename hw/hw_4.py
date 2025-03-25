@@ -1,7 +1,7 @@
-from ..src.calc import *
-from ..src.isentropic import *
-from ..src.normal_shock import *
-from ..src.utils import *
+from ..calculator.calc import *
+from ..calculator.isentropic import *
+from ..calculator.normal_shock import *
+from ..calculator.utils import *
 
 
 def hw4_1():
