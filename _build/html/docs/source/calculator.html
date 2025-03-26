@@ -13,6 +13,8 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="calculator" href="modules.html" />
+    <link rel="prev" title="311calc documentation" href="../../index.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -38,17 +40,686 @@
 <section id="calculator-calc-module">
 <h2>calculator.calc module<a class="headerlink" href="#calculator-calc-module" title="Link to this heading">¶</a></h2>
 </section>
-<section id="calculator-general-module">
-<h2>calculator.general module<a class="headerlink" href="#calculator-general-module" title="Link to this heading">¶</a></h2>
+<section id="module-calculator.general">
+<span id="calculator-general-module"></span><h2>calculator.general module<a class="headerlink" href="#module-calculator.general" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.Cp_P_T">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">Cp_P_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.Cp_P_T" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>(P0 / P) = (T0 / T)^(Cp / R)</p>
+</div></blockquote>
+<p>Exactly one of P0, P, T0, T, Cp, or R must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>P0 (float): Total pressure (None if unknown)
+P (float): Static pressure (None if unknown)
+T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)
+Cp (float): Specific heat at constant pressure (None if unknown)
+R (float): Specific gas constant (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if math errors occur.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.Cv_rho_T">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">Cv_rho_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.Cv_rho_T" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>(rho0 / rho) = (T0 / T)^(Cv / R)</p>
+</div></blockquote>
+<p>Exactly one of rho0, rho, T0, T, Cv, or R must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>rho0 (float): Total density (None if unknown)
+rho (float): Static density (None if unknown)
+T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)
+Cv (float): Specific heat at constant volume (None if unknown)
+R (float): Specific gas constant (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if math errors occur.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.bernoulli_eqn">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">bernoulli_eqn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.bernoulli_eqn" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>P0 = P + 0.5 * rho * U^2</p>
+</div></blockquote>
+<p>Exactly one of P, P0, rho, or U must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>P (float): Static Pressure (None if unknown)
+P0 (float): Total Pressure (None if unknown)
+rho (float): Static density (None if unknown)
+U (float): Flow velocity (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.compute_entropies">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">compute_entropies</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Cp_metric</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R_metric</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">s1_initial</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">0.0</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.compute_entropies" title="Link to this definition">¶</a></dt>
+<dd><p>Compute the entropy at two states given the relation:</p>
+<blockquote>
+<div><p>Δs = Cp_metric * ln(T2/T1) - R_metric * ln(P2/P1)
+s₂ = s₁ + Δs</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>Cp_metric (float): Specific heat at constant pressure (in consistent units).
+R_metric (float): Specific gas constant (in consistent units).
+T1 (float): Temperature at state 1 (must be positive).
+T2 (float): Temperature at state 2 (must be positive).
+P1 (float): Pressure at state 1 (must be positive).
+P2 (float): Pressure at state 2 (must be positive).
+s1_initial (float, optional): Reference entropy at state 1 (default is 0.0).</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>tuple: A tuple (s1, s2) where:</dt><dd><p>s1 is the entropy at state 1 (s1_initial),
+s2 is the entropy at state 2.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: If any temperature or pressure is non-positive.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.mach_eqn">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">mach_eqn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">U</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.mach_eqn" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the Mach relation:</p>
+<blockquote>
+<div><p>M = U / sqrt(gamma * R * T)</p>
+</div></blockquote>
+<p>Exactly one of M, U, gamma, R, or T must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M (float): Mach number (None if unknown)
+U (float): Flow velocity (None if unknown)
+gamma (float): Specific heat ratio (None if unknown)
+R (float): Specific gas constant (None if unknown)
+T (float): Static temperature (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.main">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.general.velocity_T0_T">
+<span class="sig-prename descclassname"><span class="pre">calculator.general.</span></span><span class="sig-name descname"><span class="pre">velocity_T0_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">U</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.general.velocity_T0_T" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>U^2 = 2 * Cp * (T0 - T)</p>
+</div></blockquote>
+<p>Exactly one of U, Cp, T0, or T must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>U (float): Flow velocity (None if unknown)
+Cp (float): Specific heat at constant pressure (None if unknown)
+T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="calculator-isentropic-module">
-<h2>calculator.isentropic module<a class="headerlink" href="#calculator-isentropic-module" title="Link to this heading">¶</a></h2>
+<section id="module-calculator.isentropic">
+<span id="calculator-isentropic-module"></span><h2>calculator.isentropic module<a class="headerlink" href="#module-calculator.isentropic" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.isentropic_P_P0">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">isentropic_P_P0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cp</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.isentropic_P_P0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the isentropic relation:</p>
+<blockquote>
+<div><p>P0 / P = (T0 / T)^(Cp / R)</p>
+</div></blockquote>
+<p>Exactly one of P0, P, T0, T, Cp, or R must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>P0 (float): Total pressure (None if unknown)
+P (float): Static pressure (None if unknown)
+T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)
+Cp (float): Specific heat at constant pressure (None if unknown)
+R (float): Specific gas constant (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if math errors occur.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.isentropic_T_T0">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">isentropic_T_T0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.isentropic_T_T0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the isentropic relation:</p>
+<blockquote>
+<div><p>T0 / T = 1 + ((gamma - 1) / 2) * M^2</p>
+</div></blockquote>
+<p>Exactly one of T0, T, gamma, or M must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)
+gamma (float): Specific heat ratio (None if unknown)
+M (float): Mach number (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.isentropic_mach_P_P0">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">isentropic_mach_P_P0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.isentropic_mach_P_P0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>M = sqrt(5 * ((P0 / P)^(2/7) - 1))</p>
+</div></blockquote>
+<p>Exactly one of M, P0, or P must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M (float): Mach number (None if unknown)
+P0 (float): Total pressure (None if unknown)
+P (float): Static pressure (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.isentropic_mach_T_T0">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">isentropic_mach_T_T0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.isentropic_mach_T_T0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>M = sqrt(5 * (T0 / T - 1))</p>
+</div></blockquote>
+<p>Exactly one of M, T0, or T must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M (float): Mach number (None if unknown)
+T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.isentropic_mach_rho_rho0">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">isentropic_mach_rho_rho0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.isentropic_mach_rho_rho0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation:</p>
+<blockquote>
+<div><p>M = sqrt(5 * ((rho0 / rho)^(2/5) - 1))</p>
+</div></blockquote>
+<p>Exactly one of M, rho0, or rho must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M (float): Mach number (None if unknown)
+rho0 (float): Total density (None if unknown)
+rho (float): Static density (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.isentropic_rho_rho0">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">isentropic_rho_rho0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T0</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Cv</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">R</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.isentropic_rho_rho0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the isentropic relation:</p>
+<blockquote>
+<div><p>rho0 / rho = (T0 / T)^(Cv / R)</p>
+</div></blockquote>
+<p>Exactly one of rho0, rho, T0, T, Cv, or R must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>rho0 (float): Total density (None if unknown)
+rho (float): Static density (None if unknown)
+T0 (float): Total temperature (None if unknown)
+T (float): Static temperature (None if unknown)
+Cv (float): Specific heat at constant volume (None if unknown)
+R (float): Specific gas constant (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if math errors occur.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.isentropic.main">
+<span class="sig-prename descclassname"><span class="pre">calculator.isentropic.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calculator.isentropic.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="calculator-normal-shock-module">
-<h2>calculator.normal_shock module<a class="headerlink" href="#calculator-normal-shock-module" title="Link to this heading">¶</a></h2>
+<section id="module-calculator.normal_shock">
+<span id="calculator-normal-shock-module"></span><h2>calculator.normal_shock module<a class="headerlink" href="#module-calculator.normal_shock" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.mach1_mach2">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">mach1_mach2</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.mach1_mach2" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>M2^2 = (1 + ((gamma-1)/2) * M1^2) / (gamma * M1^2 - ((gamma-1)/2))</p>
+</div></blockquote>
+<p>Exactly one of M1 or M2 must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M1 (float): Mach number before the shock (None if unknown)
+M2 (float): Mach number after the shock (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed M2 (if M1 was provided) or computed M1 (if M2 was provided).</p>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>ValueError: if not exactly one variable is None, if division by zero occurs,</dt><dd><p>or if a math error occurs (e.g. negative value under a square root).</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.main">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.normal_shock_P">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">normal_shock_P</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2_P1_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.normal_shock_P" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the normal shock pressure relation:</p>
+<blockquote>
+<div><p>P2 / P1 = (7*M1^2 - 1) / 6</p>
+</div></blockquote>
+<p>The missing variable can be any one of M1, P1, P2, or the pressure ratio.
+The ratio may be provided explicitly via P2_P1_ratio.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M1 (float): Upstream Mach number (None if unknown)
+P1 (float): Upstream pressure (None if unknown)
+P2 (float): Downstream pressure (None if unknown)
+P2_P1_ratio (float): Pressure ratio (P2/P1) (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if the input combination is invalid or a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.normal_shock_P0">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">normal_shock_P0</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P01</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2_P1_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T1_T2_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P02_P01_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.normal_shock_P0" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the normal shock total pressure relation:</p>
+<blockquote>
+<div><p>P02 / P01 = (P2 / P1) * (T1 / T2)^(7/2)</p>
+</div></blockquote>
+<p>The missing variable can be any one of P1, P2, T1, T2, P01, or P02,
+or the corresponding ratio (static, temperature, or total pressure).
+The ratios may be provided explicitly via P2_P1_ratio, T1_T2_ratio, or P02_P01_ratio.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>P1 (float): Upstream static pressure (None if unknown)
+P2 (float): Downstream static pressure (None if unknown)
+T1 (float): Upstream temperature (None if unknown)
+T2 (float): Downstream temperature (None if unknown)
+P01 (float): Upstream total pressure (None if unknown)
+P02 (float): Downstream total pressure (None if unknown)
+P2_P1_ratio (float): Static pressure ratio (P2/P1) (None if unknown)
+T1_T2_ratio (float): Temperature ratio (T1/T2) (None if unknown)
+P02_P01_ratio (float): Total pressure ratio (P02/P01) (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if the input combination is invalid or a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.normal_shock_T">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">normal_shock_T</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T2_T1_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.normal_shock_T" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the normal shock temperature relation:</p>
+<blockquote>
+<div><p>T2 / T1 = ((7*M1^2 - 1) * (5 + M1^2)) / (36 * M1^2)</p>
+</div></blockquote>
+<p>The missing variable can be any one of M1, T1, T2, or the temperature ratio.
+The ratio may be provided explicitly via T2_T1_ratio.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M1 (float): Upstream Mach number (None if unknown)
+T1 (float): Upstream temperature (None if unknown)
+T2 (float): Downstream temperature (None if unknown)
+T2_T1_ratio (float): Temperature ratio (T2/T1) (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if the input combination is invalid or a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.normal_shock_rho">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">normal_shock_rho</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho2_rho1_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.normal_shock_rho" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the normal shock density relation:</p>
+<blockquote>
+<div><p>rho2 / rho1 = (6 * M1^2) / (5 + M1^2)</p>
+</div></blockquote>
+<p>The missing variable can be any one of M1, rho1, rho2, or the density ratio.
+The ratio may be provided explicitly via rho2_rho1_ratio.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M1 (float): Upstream Mach number (None if unknown)
+rho1 (float): Upstream density (None if unknown)
+rho2 (float): Downstream density (None if unknown)
+rho2_rho1_ratio (float): Density ratio (rho2/rho1) (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if the input combination is invalid or a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.normal_shock.pitot_tube">
+<span class="sig-prename descclassname"><span class="pre">calculator.normal_shock.</span></span><span class="sig-name descname"><span class="pre">pitot_tube</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P02</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.normal_shock.pitot_tube" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the pitot tube relation:</p>
+<blockquote>
+<div><p>P02 / P1 = (6^6 * M^7) / (5^(7/2) * (7*M^2 - 1)^(5/2))</p>
+</div></blockquote>
+<p>Exactly one of M, P1, or P02 must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M (float): Mach number (None if unknown)
+P1 (float): Static pressure (None if unknown)
+P02 (float): Pitot (total) pressure (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
-<section id="calculator-oblique-shock-module">
-<h2>calculator.oblique_shock module<a class="headerlink" href="#calculator-oblique-shock-module" title="Link to this heading">¶</a></h2>
+<section id="module-calculator.oblique_shock">
+<span id="calculator-oblique-shock-module"></span><h2>calculator.oblique_shock module<a class="headerlink" href="#module-calculator.oblique_shock" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.M2_Mn2_relation">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">M2_Mn2_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">M2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mn2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.M2_Mn2_relation" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>M2 = Mn2 / sin(beta - theta)</p>
+</div></blockquote>
+<p>Exactly one of M2, Mn2, beta, or theta must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>M2 (float): Downstream Mach number (None if unknown)
+Mn2 (float): Downstream normal Mach number (None if unknown)
+beta (float): Shock angle in degrees (None if unknown)
+theta (float): Flow deflection angle in degrees (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed value of the missing variable. In the case of beta or theta,</dt><dd><p>the result is in degrees.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>ValueError: if not exactly one variable is None, if a math error occurs,</dt><dd><p>or if the computed value is non-physical.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.mach_angle">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">mach_angle</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mach</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.mach_angle" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>mu = asin(1 / M)</p>
+</div></blockquote>
+<p>Exactly one of angle or mach must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>angle (float): Mach angle in degrees (None if unknown)
+mach (float): Mach number (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed mach angle (in degrees) or mach number.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.mach_beta_relation">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">mach_beta_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Mn1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.mach_beta_relation" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>Mn1 = M1 * sin(beta)</p>
+</div></blockquote>
+<p>Exactly one of Mn1, M1, or beta must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>Mn1 (float): The normal component of Mach number (None if unknown)
+M1 (float): The free-stream Mach number (None if unknown)
+beta (float): The shock angle in degrees (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed value of the missing variable. If beta is computed,</dt><dd><p>the result is in degrees.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.machn1_machn2_relation">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">machn1_machn2_relation</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">Mn1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mn2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.machn1_machn2_relation" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>Mn2^2 = (1 + ((gamma - 1)/2) * Mn1^2) / (gamma * Mn1^2 - ((gamma - 1)/2))</p>
+</div></blockquote>
+<p>Exactly one of Mn1, Mn2, or gamma must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>Mn1 (float): The upstream normal Mach number (None if unknown)
+Mn2 (float): The downstream normal Mach number (None if unknown)
+gamma (float): The specific heat ratio (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed value of the missing variable. For Mn1 and Mn2,</dt><dd><p>the result is positive.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><dl class="simple">
+<dt>ValueError: if not exactly one variable is None, if a math error occurs,</dt><dd><p>or if the computed value is non-physical.</p>
+</dd>
+</dl>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.main">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.oblique_P2_P1">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">oblique_P2_P1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">P1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mn1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.oblique_P2_P1" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>P2 / P1 = 1 + [2 * gamma / (gamma + 1)] * (Mn1^2 - 1)</p>
+</div></blockquote>
+<p>Exactly one of P1, P2, gamma, or Mn1 must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>P1 (float): Upstream pressure (None if unknown)
+P2 (float): Downstream pressure (None if unknown)
+gamma (float): Specific heat ratio (None if unknown)
+Mn1 (float): Upstream normal Mach number (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed value of the missing variable. For P1 or P2, the result is a pressure;</dt><dd><p>for Mn1, a Mach number; and for gamma, a dimensionless value.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None, if a math error occurs, or if the computed value is non-physical.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.oblique_rho2_rho1">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">oblique_rho2_rho1</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">rho2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">Mn1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.oblique_rho2_rho1" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>rho2 / rho1 = ((gamma + 1) * Mn1^2) / (2 + (gamma - 1) * Mn1^2)</p>
+</div></blockquote>
+<p>Exactly one of rho2, rho1, Mn1, or gamma must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>rho2 (float): Downstream density (None if unknown)
+rho1 (float): Upstream density (None if unknown)
+Mn1 (float): Upstream normal Mach number (None if unknown)
+gamma (float): Specific heat ratio (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed value of the missing variable. In the case of rho2 or rho1,</dt><dd><p>the result is a density; for Mn1, a Mach number; and for gamma, a dimensionless value.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None, if a math error occurs, or if the computed value is non-physical.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.phi_beta_theta">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">phi_beta_theta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">phi</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.phi_beta_theta" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>phi = beta - theta</p>
+</div></blockquote>
+<p>Exactly one of phi, beta, or theta must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>phi (float): The angle difference in degrees (None if unknown)
+beta (float): The shock angle in degrees (None if unknown)
+theta (float): The flow deflection angle in degrees (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: The computed value of the missing variable in degrees.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.solve_beta">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">solve_beta</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">branch</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'weak'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.oblique_shock.solve_beta" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the shock angle beta using the theta-beta-Mach relation for the specified shock branch.</p>
+<blockquote>
+<div><p>tan(theta) = 2 * cot(beta) * [(M1^2 * sin^2(beta) - 1) / (M1^2 * (gamma + cos(2*beta)) + 2)]</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>theta (float): Flow deflection angle in degrees.
+M1 (float): Free-stream Mach number.
+gamma (float): Specific heat ratio.
+branch (str): ‘weak’ for the weak shock solution or ‘strong’ for the strong shock solution.</p>
+</dd>
+<dt>Returns:</dt><dd><p>float: Shock angle beta in degrees.</p>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if an invalid branch is provided or a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.temperature_ratio">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">temperature_ratio</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">T1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho2</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">T_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">P_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rho_ratio</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.temperature_ratio" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>T2 / T1 = (P2 / P1) * (rho1 / rho2)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>The function may be used in two modes:</dt><dd><ol class="arabic simple">
+<li><p>Ratio mode: If T_ratio, P_ratio, or rho_ratio is provided (non-None), the corresponding ratio
+is used and the individual temperatures, pressures, or densities are ignored.</p></li>
+<li><p>Component mode: If both T1 and T2 (or both P1 and P2, or both rho1 and rho2) are provided,
+the corresponding ratio is computed.</p></li>
+</ol>
+</dd>
+</dl>
+<p>If both the individual values are unknown (i.e. T1 and T2 for temperature, etc.), the function
+returns the computed ratio.</p>
+<p>Exactly one of the three independent quantities (T_ratio, P_ratio, or rho_ratio) must be unknown
+(i.e. determined by the relation). The other two must be provided either directly or via their components.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>T1 (float): Upstream temperature (None if unknown)
+T2 (float): Downstream temperature (None if unknown)
+P1 (float): Upstream pressure (None if unknown)
+P2 (float): Downstream pressure (None if unknown)
+rho1 (float): Upstream density (None if unknown)
+rho2 (float): Downstream density (None if unknown)
+T_ratio (float): Temperature ratio T2/T1 (None if unknown)
+P_ratio (float): Pressure ratio P2/P1 (None if unknown)
+rho_ratio (float): Density ratio rho1/rho2 (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed missing ratio (T_ratio, P_ratio, or rho_ratio). In the case where T1 and T2 (or P1/P2 or rho1/rho2)</dt><dd><p>are both unknown, the function returns the computed ratio.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one independent ratio is unknown or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.oblique_shock.theta_beta_mach">
+<span class="sig-prename descclassname"><span class="pre">calculator.oblique_shock.</span></span><span class="sig-name descname"><span class="pre">theta_beta_mach</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">theta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">beta</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">M1</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">gamma</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#calculator.oblique_shock.theta_beta_mach" title="Link to this definition">¶</a></dt>
+<dd><p>Solve for the missing variable in the relation</p>
+<blockquote>
+<div><p>tan(theta) = 2 * cot(beta) * [(M1^2 * sin^2(beta) - 1) / (M1^2 * (gamma + cos(2*beta)) + 2)]</p>
+</div></blockquote>
+<p>Exactly one of theta, beta, M1, or gamma must be None.</p>
+<dl class="simple">
+<dt>Parameters:</dt><dd><p>theta (float): Flow deflection angle in degrees (None if unknown)
+beta (float): Shock angle in degrees (None if unknown)
+M1 (float): Free-stream Mach number (None if unknown)
+gamma (float): Specific heat ratio (None if unknown)</p>
+</dd>
+<dt>Returns:</dt><dd><dl class="simple">
+<dt>float: The computed value of the missing variable. If theta or beta is computed,</dt><dd><p>the result is in degrees.</p>
+</dd>
+</dl>
+</dd>
+<dt>Raises:</dt><dd><p>ValueError: if not exactly one variable is None or if a math error occurs.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="calculator-prandtl-meyer-module">
 <h2>calculator.prandtl_meyer module<a class="headerlink" href="#calculator-prandtl-meyer-module" title="Link to this heading">¶</a></h2>
@@ -56,11 +727,46 @@
 <section id="calculator-state-module">
 <h2>calculator.state module<a class="headerlink" href="#calculator-state-module" title="Link to this heading">¶</a></h2>
 </section>
-<section id="calculator-utils-module">
-<h2>calculator.utils module<a class="headerlink" href="#calculator-utils-module" title="Link to this heading">¶</a></h2>
+<section id="module-calculator.utils">
+<span id="calculator-utils-module"></span><h2>calculator.utils module<a class="headerlink" href="#module-calculator.utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.atm2pa">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">atm2pa</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pres_atm</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.utils.atm2pa" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.deg2rad">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">deg2rad</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle_deg</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.utils.deg2rad" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.k2r">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">k2r</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temp_K</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.utils.k2r" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.main">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">main</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#calculator.utils.main" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.pa2atm">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">pa2atm</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pres_pa</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.utils.pa2atm" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.r2k">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">r2k</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">temp_R</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.utils.r2k" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="calculator.utils.rad2deg">
+<span class="sig-prename descclassname"><span class="pre">calculator.utils.</span></span><span class="sig-name descname"><span class="pre">rad2deg</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">angle_rad</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float</span></span></span><a class="headerlink" href="#calculator.utils.rad2deg" title="Link to this definition">¶</a></dt>
+<dd></dd></dl>
+
 </section>
-<section id="module-contents">
-<h2>Module contents<a class="headerlink" href="#module-contents" title="Link to this heading">¶</a></h2>
+<section id="module-calculator">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-calculator" title="Link to this heading">¶</a></h2>
 </section>
 </section>
 
@@ -81,11 +787,30 @@
 
 
 <h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">calculator package</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#submodules">Submodules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calculator-calc-module">calculator.calc module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-calculator.general">calculator.general module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-calculator.isentropic">calculator.isentropic module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-calculator.normal_shock">calculator.normal_shock module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-calculator.oblique_shock">calculator.oblique_shock module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calculator-prandtl-meyer-module">calculator.prandtl_meyer module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calculator-state-module">calculator.state module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-calculator.utils">calculator.utils module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#module-calculator">Module contents</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="modules.html">calculator</a></li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="../../index.html" title="previous chapter">311calc documentation</a></li>
+      <li>Next: <a href="modules.html" title="next chapter">calculator</a></li>
   </ul></li>
 </ul>
 </div>

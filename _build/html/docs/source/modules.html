@@ -13,6 +13,7 @@
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="prev" title="calculator package" href="calculator.html" />
    
   <link rel="stylesheet" href="../../_static/custom.css" type="text/css" />
   
@@ -37,14 +38,63 @@
 <li class="toctree-l1"><a class="reference internal" href="calculator.html">calculator package</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html#submodules">Submodules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-calc-module">calculator.calc module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-general-module">calculator.general module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-isentropic-module">calculator.isentropic module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-normal-shock-module">calculator.normal_shock module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-oblique-shock-module">calculator.oblique_shock module</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-calculator.general">calculator.general module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.Cp_P_T"><code class="docutils literal notranslate"><span class="pre">Cp_P_T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.Cv_rho_T"><code class="docutils literal notranslate"><span class="pre">Cv_rho_T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.bernoulli_eqn"><code class="docutils literal notranslate"><span class="pre">bernoulli_eqn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.compute_entropies"><code class="docutils literal notranslate"><span class="pre">compute_entropies()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.mach_eqn"><code class="docutils literal notranslate"><span class="pre">mach_eqn()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.general.velocity_T0_T"><code class="docutils literal notranslate"><span class="pre">velocity_T0_T()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-calculator.isentropic">calculator.isentropic module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.isentropic_P_P0"><code class="docutils literal notranslate"><span class="pre">isentropic_P_P0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.isentropic_T_T0"><code class="docutils literal notranslate"><span class="pre">isentropic_T_T0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.isentropic_mach_P_P0"><code class="docutils literal notranslate"><span class="pre">isentropic_mach_P_P0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.isentropic_mach_T_T0"><code class="docutils literal notranslate"><span class="pre">isentropic_mach_T_T0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.isentropic_mach_rho_rho0"><code class="docutils literal notranslate"><span class="pre">isentropic_mach_rho_rho0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.isentropic_rho_rho0"><code class="docutils literal notranslate"><span class="pre">isentropic_rho_rho0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.isentropic.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-calculator.normal_shock">calculator.normal_shock module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.mach1_mach2"><code class="docutils literal notranslate"><span class="pre">mach1_mach2()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.normal_shock_P"><code class="docutils literal notranslate"><span class="pre">normal_shock_P()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.normal_shock_P0"><code class="docutils literal notranslate"><span class="pre">normal_shock_P0()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.normal_shock_T"><code class="docutils literal notranslate"><span class="pre">normal_shock_T()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.normal_shock_rho"><code class="docutils literal notranslate"><span class="pre">normal_shock_rho()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.normal_shock.pitot_tube"><code class="docutils literal notranslate"><span class="pre">pitot_tube()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-calculator.oblique_shock">calculator.oblique_shock module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.M2_Mn2_relation"><code class="docutils literal notranslate"><span class="pre">M2_Mn2_relation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.mach_angle"><code class="docutils literal notranslate"><span class="pre">mach_angle()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.mach_beta_relation"><code class="docutils literal notranslate"><span class="pre">mach_beta_relation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.machn1_machn2_relation"><code class="docutils literal notranslate"><span class="pre">machn1_machn2_relation()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.oblique_P2_P1"><code class="docutils literal notranslate"><span class="pre">oblique_P2_P1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.oblique_rho2_rho1"><code class="docutils literal notranslate"><span class="pre">oblique_rho2_rho1()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.phi_beta_theta"><code class="docutils literal notranslate"><span class="pre">phi_beta_theta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.solve_beta"><code class="docutils literal notranslate"><span class="pre">solve_beta()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.temperature_ratio"><code class="docutils literal notranslate"><span class="pre">temperature_ratio()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.oblique_shock.theta_beta_mach"><code class="docutils literal notranslate"><span class="pre">theta_beta_mach()</span></code></a></li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-prandtl-meyer-module">calculator.prandtl_meyer module</a></li>
 <li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-state-module">calculator.state module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculator.html#calculator-utils-module">calculator.utils module</a></li>
-<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-contents">Module contents</a></li>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-calculator.utils">calculator.utils module</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.atm2pa"><code class="docutils literal notranslate"><span class="pre">atm2pa()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.deg2rad"><code class="docutils literal notranslate"><span class="pre">deg2rad()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.k2r"><code class="docutils literal notranslate"><span class="pre">k2r()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.main"><code class="docutils literal notranslate"><span class="pre">main()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.pa2atm"><code class="docutils literal notranslate"><span class="pre">pa2atm()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.r2k"><code class="docutils literal notranslate"><span class="pre">r2k()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="calculator.html#calculator.utils.rad2deg"><code class="docutils literal notranslate"><span class="pre">rad2deg()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html#module-calculator">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -68,11 +118,20 @@
 
 
 <h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="calculator.html">calculator package</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">calculator</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="calculator.html">calculator package</a></li>
+</ul>
+</li>
+</ul>
 
 <div class="relations">
 <h3>Related Topics</h3>
 <ul>
   <li><a href="../../index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="calculator.html" title="previous chapter">calculator package</a></li>
   </ul></li>
 </ul>
 </div>

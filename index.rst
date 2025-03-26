@@ -15,6 +15,6 @@ documentation for details.
    :maxdepth: 2
    :caption: Contents:
 
-   calculator
-   modules
+   docs/source/calculator
+   docs/source/modules
 

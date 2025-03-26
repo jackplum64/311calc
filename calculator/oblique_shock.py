@@ -1,5 +1,6 @@
 import math
 import scipy.optimize as opt
+import numpy
 
 
 def mach_angle(angle=None, mach=None):
@@ -221,6 +222,7 @@ def solve_beta(theta: float, M1: float, gamma: float, branch: str = 'weak') -> f
 
     beta_solution = opt.fsolve(shock_eq, beta_guess)
     return beta_solution[0]
+
         
 
 def machn1_machn2_relation(Mn1=None, Mn2=None, gamma=None):
@@ -635,6 +637,57 @@ def M2_Mn2_relation(M2=None, Mn2=None, beta=None, theta=None):
             return beta - angle_diff
         except Exception as e:
             raise ValueError(f"Math error when computing theta: {e}")
+        
+
+def max_deflection_angle(M1=None, gamma=None, num_points = 10000):
+    """
+    Determine the maximum flow deflection angle (theta_max) and its corresponding shock angle (beta_max)
+    for a given upstream Mach number M1 and specific heat ratio gamma.
+
+    Parameters:
+      M1 (float): Upstream Mach number.
+      gamma (float): Specific heat ratio (default is 1.4).
+      num_points (int): Number of sample points for beta between the Mach angle and 90°.
+
+    Returns:
+      Tuple[float, float]: (theta_max, beta_max) in degrees, where theta_max is the maximum deflection
+                           angle and beta_max is the shock angle corresponding to theta_max.
+    """
+    # Calculate the Mach angle (mu) in degrees.
+    mu = np.degrees(np.arcsin(1 / M1))
+    
+    # Create an array of shock angle values from the Mach angle to 90°.
+    beta_vals = np.linspace(mu, 90, num_points)
+    
+    # For each shock angle (in degrees), compute the corresponding deflection angle.
+    # The relation used is:
+    #   theta = beta - atand( ((2 + (gamma-1)*M1^2*sin^2(beta)) / ((gamma+1)*M1^2*sin^2(beta)))*tan(beta) )
+    # where atand returns the arctan in degrees.
+    
+    # Compute sine and tangent of beta values (convert beta from degrees to radians).
+    sin_beta = np.sin(np.radians(beta_vals))
+    tan_beta = np.tan(np.radians(beta_vals))
+    
+    # Calculate the numerator and denominator for the arctan argument.
+    numerator = 2 + (gamma - 1) * M1**2 * sin_beta**2
+    denominator = (gamma + 1) * M1**2 * sin_beta**2
+    argument = (numerator / denominator) * tan_beta
+    
+    # Compute the deflection angle for each beta (convert arctan output to degrees).
+    theta_vals = beta_vals - np.degrees(np.arctan(argument))
+    
+    # Find the maximum deflection angle and its corresponding shock angle.
+    idx_max = np.argmax(theta_vals)
+    theta_max = theta_vals[idx_max]
+    beta_max = beta_vals[idx_max]
+    
+    return theta_max, beta_max
+
+# Example usage:
+if __name__ == '__main__':
+    M1_input = 2.0  # Example upstream Mach number.
+    theta_max, beta_max = max_deflection_angle(M1_input)
+    print(f"Maximum deflection angle: {theta_max:.2f}° at shock angle: {beta_max:.2f}°")
 
 
 
