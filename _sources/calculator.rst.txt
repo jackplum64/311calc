@@ -4,6 +4,14 @@ calculator package
 Submodules
 ----------
 
+calculator.isentropic module
+----------------------------
+
+.. automodule:: calculator.isentropic
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
 calculator.calc module
 ----------------------
 
@@ -20,13 +28,6 @@ calculator.general module
    :undoc-members:
    :show-inheritance:
 
-calculator.isentropic module
-----------------------------
-
-.. automodule:: calculator.isentropic
-   :members:
-   :undoc-members:
-   :show-inheritance:
 
 calculator.normal\_shock module
 -------------------------------
