@@ -1,7 +1,7 @@
 import os
 import sys
 # Add the project root (311calc) to sys.path
-sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('../../'))
 
 
 # Configuration file for the Sphinx documentation builder.
@@ -22,6 +22,7 @@ release = '1.01'
 
 extensions = [
     'sphinx.ext.autodoc',
+    'sphinx.ext.napoleon'
     # Other extensions can be added here
 ]
 

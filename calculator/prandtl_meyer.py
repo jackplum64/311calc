@@ -1,5 +1,5 @@
 import math
-from utils import (rad2deg, deg2rad)
+from .utils import (rad2deg, deg2rad)
 
 
 def prandtl_meyer(gamma=None, mach=None):

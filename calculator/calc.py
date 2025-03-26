@@ -1,16 +1,16 @@
-from isentropic import (isentropic_T_T0, isentropic_mach_T_T0, 
+from .isentropic import (isentropic_T_T0, isentropic_mach_T_T0, 
                        isentropic_P_P0, isentropic_mach_P_P0,
                        isentropic_rho_rho0, isentropic_mach_rho_rho0)
-from normal_shock import (mach1_mach2, normal_shock_P,
+from .normal_shock import (mach1_mach2, normal_shock_P,
                    normal_shock_P0, normal_shock_T, normal_shock_rho, pitot_tube)
-from oblique_shock import (mach_angle, mach_beta_relation, theta_beta_mach,
+from .oblique_shock import (mach_angle, mach_beta_relation, theta_beta_mach,
                                oblique_rho2_rho1, oblique_P2_P1, temperature_ratio,
                                phi_beta_theta, M2_Mn2_relation, machn1_machn2_relation,
                                mach_beta_relation, solve_beta, max_deflection_angle)
-from utils import (pa2atm, atm2pa, rad2deg, deg2rad, r2k, k2r)
-from general import (bernoulli_eqn, mach_eqn, velocity_T0_T,
+from .utils import (pa2atm, atm2pa, rad2deg, deg2rad, r2k, k2r)
+from .general import (bernoulli_eqn, mach_eqn, velocity_T0_T,
                      Cv_rho_T, compute_entropies, Cp_P_T)
-from prandtl_meyer import (prandtl_meyer, prandtl_meyer_difference, expansion_T2_T1,
+from .prandtl_meyer import (prandtl_meyer, prandtl_meyer_difference, expansion_T2_T1,
                             expansion_P2_P1)
 
 
