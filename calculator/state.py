@@ -1,4 +1,4 @@
-from .isentropic import (isentropic_T_T0, isentropic_mach_T_T0, 
+from isentropic import (isentropic_T_T0, isentropic_mach_T_T0, 
                        isentropic_P_P0, isentropic_mach_P_P0,
                        isentropic_rho_rho0, isentropic_mach_rho_rho0)
 
